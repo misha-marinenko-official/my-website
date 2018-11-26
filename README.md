@@ -1,5 +1,3 @@
-# 2015, a WebGL experiment
-
 ## Instructions
 
 ### Out of the box
