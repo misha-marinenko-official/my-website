@@ -1,3 +1,7 @@
+# [My Website](http://marinenko.rf.gd)
+
+[![Build Status](https://travis-ci.com/misha-marinenko-official/my-website.svg?branch=master)](https://travis-ci.com/misha-marinenko-official/my-website)
+
 ## Instructions
 
 ### Out of the box
@@ -12,7 +16,7 @@ $ gulp serve
 
 ### In details
 
-####  Before anything
+#### Before anything
 
 ```
 $ npm install

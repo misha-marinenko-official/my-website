@@ -9,7 +9,7 @@ before_install:
 install:
   - yarn install
   - bower install
-script: 
+script:
   - gulp lint
   - gulp build
 cache:
