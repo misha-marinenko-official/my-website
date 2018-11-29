@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var minify = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
-var notify = require('gulp-notify');
+//var notify = require('gulp-notify');
 
 var pkg = require('../utils/pkg');
 
@@ -21,18 +21,18 @@ gulp.task('html', function () {
       minifyCSS: true,
       keepClosingSlash: true
     }))
-    .pipe(gulp.dest('./'))
-    .pipe(notify({ title: 'Html', message: 'Success', sound: 'Morse' }));
-  
-  if(pkg.watch) {
+    .pipe(gulp.dest('./'));
+  //.pipe(notify({ title: 'Html', message: 'Success', sound: 'Morse' }));
+
+  if (pkg.watch) {
     gulp.watch([
-        './app/src/**/*.html',
-        '!./app/src/{vendor,vendor/**}'
-      ], function (file) {
-        gulp.src(file.path)
-          .pipe(pkg.debug || false ? gutil.noop() : minify())
-          .pipe(gulp.dest('./'))
-          .pipe(notify({ title: 'Html', message: 'Success', sound: 'Morse' }));
-      });
+      './app/src/**/*.html',
+      '!./app/src/{vendor,vendor/**}'
+    ], function (file) {
+      gulp.src(file.path)
+        .pipe(pkg.debug || false ? gutil.noop() : minify())
+        .pipe(gulp.dest('./'));
+      //.pipe(notify({ title: 'Html', message: 'Success', sound: 'Morse' }));
+    });
   }
 });

@@ -3,19 +3,19 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var concat = require('gulp-concat');
-var notify = require('gulp-notify');
+//var notify = require('gulp-notify');
 
 var splitPath = require('../utils/splitPath');
 
-function bundle (entries, output, title) {
+function bundle(entries, output, title) {
   title = title || 'Bundle';
 
   var outputDetails = splitPath(output);
 
   return gulp.src(entries)
     .pipe(concat(outputDetails.file))
-    .pipe(gulp.dest(outputDetails.path))
-    .pipe(notify({ title: title, message: 'Success', sound: 'Morse' }));
+    .pipe(gulp.dest(outputDetails.path));
+  //.pipe(notify({ title: title, message: 'Success', sound: 'Morse' }));
 
 }
 

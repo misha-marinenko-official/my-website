@@ -5,33 +5,33 @@ var gutil = require('gulp-util');
 var less = require('gulp-less');
 var minify = require('gulp-minify-css');
 var rename = require('gulp-rename');
-var notify = require('gulp-notify');
+//var notify = require('gulp-notify');
 
 var pkg = require('../utils/pkg');
 var splitPath = require('../utils/splitPath');
 
-function styles (input, output, message) {
+function styles(input, output, message) {
   message = message || 'Styles';
 
   var outputDetails = splitPath(output);
 
-  function process () {
+  function process() {
     gulp.src(input)
       .pipe(less().on('error', function (error) {
         gutil.log('Less error', error);
         gutil.beep();
-        notify({ title: message, message: 'Error', sound: 'Basso' });
+        //notify({ title: message, message: 'Error', sound: 'Basso' });
         this.end();
       }))
       .pipe(pkg.debug || false ? gutil.noop() : minify())
       .pipe(rename(outputDetails.file))
-      .pipe(gulp.dest(outputDetails.path))
-      .pipe(notify({ title: message, message: 'Success', sound: 'Morse' }));
+      .pipe(gulp.dest(outputDetails.path));
+    //.pipe(notify({ title: message, message: 'Success', sound: 'Morse' }));
   }
 
   process();
 
-  if(pkg.watch) {
+  if (pkg.watch) {
     gulp.watch('./app/src/less/**/*.less', process);
   }
 }

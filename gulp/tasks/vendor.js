@@ -5,12 +5,12 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var notify = require('gulp-notify');
+//var notify = require('gulp-notify');
 
 var pkg = require('../utils/pkg');
 var splitPath = require('../utils/splitPath');
 
-function vendor (dependencies, output, message) {
+function vendor(dependencies, output, message) {
   message = message || 'Vendor';
 
   var outputDetails = splitPath(output);
@@ -29,8 +29,12 @@ function vendor (dependencies, output, message) {
   return gulp.src(paths)
     .pipe(concat(outputDetails.file))
     .pipe(pkg.debug || false ? gutil.noop() : uglify())
-    .pipe(gulp.dest(outputDetails.path))
-    .pipe(notify({ title: message, message: 'Success', sound: 'Morse' }));
+    .pipe(gulp.dest(outputDetails.path));
+  /*.pipe(notify({
+    title: message,
+    message: 'Success',
+    sound: 'Morse'
+  }));*/
 }
 
 gulp.task('vendor:3D', function () {
