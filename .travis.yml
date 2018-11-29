@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "10"
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
+  - export PATH="$HOME/.yarn/bin:$PATH"
+  - "yarn global add bower"
+  - "yarn global add gulp"
+install:
+  - yarn install
+  - bower install
+script: 
+  - gulp lint
+  - gulp build
+cache:
+  yarn: true
