@@ -11,6 +11,7 @@ install:
   - bower install
 script:
   - gulp lint
+  - gulp bundle
   - gulp build
 cache:
   yarn: true
