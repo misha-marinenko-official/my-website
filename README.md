@@ -1,6 +1,7 @@
 # [My Website](http://marinenko.rf.gd)
 
 [![Build Status](https://travis-ci.com/misha-marinenko-official/my-website.svg?branch=master)](https://travis-ci.com/misha-marinenko-official/my-website)
+[![HitCount](http://hits.dwyl.io/misha-marinenko-official/my-website.svg)](http://hits.dwyl.io/misha-marinenko-official/my-website)
 
 ## Instructions
 
