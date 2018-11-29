@@ -1,5 +1,5 @@
 'use strict';
-
+/* jshint node: true */
 var Section = require('../classes/SectionClass');
 
 var Smoke = require('../objects3D/SmokeObject3D');

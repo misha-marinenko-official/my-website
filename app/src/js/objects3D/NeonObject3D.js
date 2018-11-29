@@ -1,3 +1,4 @@
+/*jshint -W032 */
 'use strict';
 
 var jQuery = require('jquery');

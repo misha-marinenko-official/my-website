@@ -35,10 +35,7 @@ City.prototype.addGroup = function (data) {
       }
 
       var isSolid = data.outline[objName].solid ? true : false;
-      var offset = data.outline[objName].offset
-        ? data.outline[objName].offset
-        : 0.15;
-
+      var offset = data.outline[objName].offset ? data.outline[objName].offset : 0.15;
       this.loadObj(groupName, url, offset, isSolid);
     }
   }

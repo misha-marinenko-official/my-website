@@ -1,5 +1,5 @@
 'use strict';
-
+/* jshint node: true */
 var Section = require('../classes/SectionClass');
 
 var Title = require('../objects3D/HelloTitleObject3D');

@@ -9,7 +9,7 @@ gulp.task('lint', function () {
       '!app/src/js/utils/noiseUtil.js',
       '!app/src/js/polyfills/**.js'
     ])
-    .pipe(jshint())
+    .pipe(jshint({node: true, browser: true, "asi": true, trailingcomma: false}))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
 });
