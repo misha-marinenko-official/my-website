@@ -14,3 +14,5 @@ script:
   - gulp build
 cache:
   yarn: true
+  directories:
+    - "./app/dist"
